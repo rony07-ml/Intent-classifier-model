@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN apt-get update \
  && apt-get install -y --no-install-recommends gcc libc-dev \
- && pip install --no-cache-dir -r requirements.txt
+ && pip install --no-cache-dir -r requirements.txt \
  && apt-get remove -y gcc libc-dev \
  && apt-get autoremove -y \
  && rm -rf /var/lib/apt/lists/*
